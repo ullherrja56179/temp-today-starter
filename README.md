@@ -1,6 +1,8 @@
 # Temp Today - A React Native Weather App [Starter Project]
 
-![App icon](./assets/icon.png){width=150}
+<p align="center">
+  <img src="./assets/icon.png" width="150" alt="App icon" />
+</p>
 
 **Temp Today** is a React Native app developed for a hands-on workshop. It allows users to view weather information such as temperature, wind speed, and humidity for selected cities.
 The app demonstrates key React Native concepts, TypeScript integration, modern styling methods, API calls, and state management with MobX.
