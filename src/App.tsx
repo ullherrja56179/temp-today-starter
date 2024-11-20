@@ -3,9 +3,9 @@ import {SafeAreaView, StyleSheet, View} from "react-native";
 import {Header} from "./components/Header";
 
 import "../global.css";
-import {WeatherDisplay} from "./components/WeatherDisplay";
 import AdditionalInfo from "./components/AdditionalInfo";
-import {StyledButton} from "./components/StyledButton";
+import StyledButton from "./components/StyledButton";
+import WeatherDisplay from "./components/WeatherDisplay";
 
 const App = () => {
     return (
