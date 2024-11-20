@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from "react-native";
+import styled from "styled-components/native";
 
 type WeatherDisplayProps = {
     temperature: number,
@@ -6,27 +6,25 @@ type WeatherDisplayProps = {
 }
 
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({temperature, condition}) => {
-    return <View style={styles.weatherDisplay}>
-        <Text style={styles.temperature}>{temperature} °C</Text>
-        <Text style={styles.condition}>{condition}</Text>
-    </View>
+    return <WeatherView>
+        <Temperature>{temperature} °C</Temperature>
+        <Condition>{condition}</Condition>
+    </WeatherView>
 }
 
-const styles = StyleSheet.create(
-    {
-        weatherDisplay: {
-            paddingTop: 50,
-            alignItems: "center",
-            justifyContent: "center"
-        },
-        temperature: {
-            fontWeight: "bold",
-            fontSize: 35
-        },
-        condition: {
-            paddingTop: 10,
-            fontSize: 20,
-            color: "grey"
-        }
-    }
-)
+const WeatherView = styled.View`
+    padding-top: 50px;
+    align-items: center;
+    justify-content: center;
+`
+
+const Temperature = styled.Text`
+    font-weight: bold;
+    font-size: 35px;
+`
+
+const Condition = styled.Text`
+    padding-top: 10px;
+    font-size: 20px;
+    color: darkgray;
+`
