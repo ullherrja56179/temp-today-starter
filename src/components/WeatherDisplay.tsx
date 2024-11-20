@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
 
 type WeatherDisplayProps = {
-    temperature: number,
-    condition: string
+    temperature: number, condition: string
 }
 
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({temperature, condition}) => {
@@ -23,8 +22,7 @@ const Temperature = styled.Text`
     font-size: 35px;
 `
 
-const Condition = styled.Text`
-    padding-top: 10px;
+const Condition = styled.Text`padding-top: 10px;
     font-size: 20px;
     color: darkgray;
 `
