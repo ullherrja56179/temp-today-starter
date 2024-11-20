@@ -1,7 +1,8 @@
 import styled from "styled-components/native";
 
 type WeatherDisplayProps = {
-    temperature: number, condition: string
+    temperature: number,
+    condition: string
 }
 
 const WeatherView = styled.View`

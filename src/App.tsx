@@ -14,7 +14,7 @@ const App = () => {
             <View style={styles.container}>
                 <WeatherDisplay temperature={30} condition={"Sunny"}/>
                 <AdditionalInfo windSpeed={20} humidity={30}/>
-                <StyledButton title={"Refresh"} onPress={() => console.log("Button Pressed")}/>
+                <StyledButton onPress={() => console.log("Button Pressed")}>Refresh</StyledButton>
             </View>
         </SafeAreaView>);
 }
