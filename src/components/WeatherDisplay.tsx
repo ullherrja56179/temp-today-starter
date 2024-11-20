@@ -13,10 +13,11 @@ const WeatherView = styled.View`
 
 const Temperature = styled.Text`
     font-weight: bold;
-    font-size: 35px;
+    font-size: 50px;
 `
 
-const Condition = styled.Text`padding-top: 10px;
+const Condition = styled.Text`
+    padding-top: 5px;
     font-size: 20px;
     color: darkgray;
 `
