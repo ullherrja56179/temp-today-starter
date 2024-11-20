@@ -7,8 +7,8 @@ type WeatherDisplayProps = {
 
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({temperature, condition}) => {
     return <View style={styles.weatherDisplay}>
-        <Text style={{fontWeight: "bold", fontSize: 35}}>{temperature} °C</Text>
-        <Text style={{paddingTop: 10, fontSize: 20}}>{condition}</Text>
+        <Text style={styles.temperature}>{temperature} °C</Text>
+        <Text style={styles.condition}>{condition}</Text>
     </View>
 }
 
@@ -18,6 +18,15 @@ const styles = StyleSheet.create(
             paddingTop: 50,
             alignItems: "center",
             justifyContent: "center"
+        },
+        temperature: {
+            fontWeight: "bold",
+            fontSize: 35
+        },
+        condition: {
+            paddingTop: 10,
+            fontSize: 20,
+            color: "grey"
         }
     }
 )
