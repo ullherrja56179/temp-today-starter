@@ -6,9 +6,8 @@ type WeatherDisplayProps = {
 }
 
 const WeatherView = styled.View`
-    padding-top: 50px;
+    padding-top: 30px;
     align-items: center;
-    justify-content: center;
 `
 
 const Temperature = styled.Text`
@@ -17,7 +16,7 @@ const Temperature = styled.Text`
 `
 
 const Condition = styled.Text`
-    padding-top: 5px;
+    padding-top: 10px;
     font-size: 20px;
     color: darkgray;
 `
