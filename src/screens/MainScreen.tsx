@@ -4,6 +4,7 @@ import {Header} from "../components/Header";
 import WeatherDisplay from "../components/WeatherDisplay";
 import AdditionalInfo from "../components/AdditionalInfo";
 import StyledButton from "../components/StyledButton";
+import LocationSelector from "../components/LocationSelector";
 
 const MainScreen = () => {
     return (
@@ -12,7 +13,7 @@ const MainScreen = () => {
                 <WeatherDisplay temperature={30} condition={"Sunny"}/>
                 <AdditionalInfo windSpeed={20} humidity={30}/>
             </View>
-            <StyledButton onPress={() => console.log("Button Pressed")}>Refresh</StyledButton>
+            <LocationSelector />
         </View>
     );
 };
