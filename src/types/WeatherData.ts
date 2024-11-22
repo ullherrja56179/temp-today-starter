@@ -20,10 +20,10 @@ export interface CurrentWeather {
 
 export interface HourlyUnits {
     time: string;
-    temperature_2m: string;
+    temperature_2m: number;
 }
 
 export interface HourlyData {
     time: readonly string[];
-    temperature_2m: readonly string[];
+    temperature_2m: readonly number[];
 }

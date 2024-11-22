@@ -4,7 +4,6 @@ import {Picker} from "@react-native-picker/picker";
 import {Alert, Platform, View} from "react-native";
 import StyledButton from "./StyledButton";
 
-
 const LocationSelector = () => {
 
     const cities = Object.keys(cityCoordinates)
@@ -12,7 +11,6 @@ const LocationSelector = () => {
 
     const handleCityChange = (city: CityName) => {
         setSelectedCity(city)
-        console.log("Selected City: " + selectedCity);
     }
 
     const handlePress = () => {
@@ -31,6 +29,7 @@ const LocationSelector = () => {
         }
     }
 
+    console.log("Selected City: " + selectedCity);
 
     return <View className={"m-5"}>
         <Picker onValueChange={handleCityChange} selectedValue={selectedCity}>
