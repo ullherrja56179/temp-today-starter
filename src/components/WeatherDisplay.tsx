@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import {formatMeasurement} from "../utils/utils"
 
 type WeatherDisplayProps = {
     temperature: number,
@@ -7,7 +8,7 @@ type WeatherDisplayProps = {
 
 const WeatherDisplay: React.FC<WeatherDisplayProps> = ({temperature, condition}) => {
     return <WeatherView>
-        <Temperature>{temperature} °C</Temperature>
+        <Temperature>{formatMeasurement(temperature)}</Temperature>
         <Condition>{condition}</Condition>
     </WeatherView>
 }

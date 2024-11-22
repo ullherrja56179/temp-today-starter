@@ -4,16 +4,17 @@ import WeatherDisplay from "../components/WeatherDisplay";
 import AdditionalInfo from "../components/AdditionalInfo";
 import LocationSelector from "../components/LocationSelector";
 import {WeatherApiResponse} from "../types/WeatherData";
-import {cityCoordinates} from "../data/cities";
+import {cityCoordinates, CityName} from "../data/cities";
 import axios from "axios/index";
 
 const MainScreen = () => {
 
     const [weatherData, setWeatherData] = useState<WeatherApiResponse | null>(null)
+    const [location, setLocation] = useState<CityName>("Berlin")
 
     useEffect(() => {
         const fetchWeather = async () => {
-            const coordinates = cityCoordinates["Berlin"]
+            const coordinates = cityCoordinates[location]
             const requestConfig = {
                 params: {
                     latitude: coordinates.latitude,
@@ -33,15 +34,13 @@ const MainScreen = () => {
 
             if (response.status === 200) {
                 setWeatherData(response.data)
-                //const temperatures = weatherData?.hourly.temperature_2m;
-                //const averageTemperature = temperatures?.reduce((prev, curr) => prev + curr);
             } else {
                 console.log("Request failed for unknown reason.")
             }
         };
 
         fetchWeather();
-    }, [])
+    }, [location])
 
     const temperatures = weatherData?.hourly?.temperature_2m;
     const averageTemperature = temperatures ? temperatures.reduce((accum, curr) => accum + curr, 0) / temperatures.length : undefined;
@@ -65,7 +64,7 @@ const MainScreen = () => {
                     )
                 }
             </View>
-            <LocationSelector/>
+            <LocationSelector setLocation={setLocation}/>
         </View>
     );
 };

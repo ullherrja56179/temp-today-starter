@@ -1,10 +1,14 @@
 import {cityCoordinates, CityName} from "../data/cities";
-import {useState} from "react";
+import React, {useState} from "react";
 import {Picker} from "@react-native-picker/picker";
 import {Alert, Platform, View} from "react-native";
 import StyledButton from "./StyledButton";
 
-const LocationSelector = () => {
+type LocationSelectorProps = {
+    setLocation: (city: CityName) => void
+}
+
+const LocationSelector: React.FC<LocationSelectorProps> = ({setLocation}) => {
 
     const cities = Object.keys(cityCoordinates)
     const [selectedCity, setSelectedCity] = useState<CityName>("Berlin");
@@ -15,21 +19,12 @@ const LocationSelector = () => {
 
     const handlePress = () => {
         const chosen = cityCoordinates[selectedCity]
-        let title = "Error"
-        let message = "Unknown City!"
         if (chosen !== undefined && chosen !== null) {
-            title = "Location Set"
-            message = "City: " + selectedCity.toUpperCase() + "\nLongitude: " + chosen.longitude + "\nLatitude: " + chosen.latitude
-        }
-
-        if (Platform.OS === "web") {
-            window.alert(message)
-        } else {
-            Alert.alert(title, message)
+            setLocation(selectedCity)
         }
     }
 
-    console.log("Selected City: " + selectedCity);
+    console.log(selectedCity.toUpperCase() + " -> Longitude: " + cityCoordinates[selectedCity].longitude + "Latitude: " + cityCoordinates[selectedCity].latitude)
 
     return <View className={"m-5"}>
         <Picker onValueChange={handleCityChange} selectedValue={selectedCity}>

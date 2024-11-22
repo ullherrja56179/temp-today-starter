@@ -5,7 +5,6 @@ export const cityCoordinates = {
     "New York": { latitude: 40.7128, longitude: -74.006 },
     Tokyo: { latitude: 35.6895, longitude: 139.6917 },
     "San Francisco": { latitude: 37.7749, longitude: -122.4194 }, // Example city
-    undefined
 };
 
 export type CityName = keyof typeof cityCoordinates;
