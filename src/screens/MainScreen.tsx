@@ -3,9 +3,15 @@ import WeatherDisplay from "../components/WeatherDisplay";
 import AdditionalInfo from "../components/AdditionalInfo";
 import LocationSelector from "../components/LocationSelector";
 import useWeatherData from "../hooks/useWeatherData";
+import weatherStore from "../stores/WeatherStore";
+import {observer} from "mobx-react";
+import React from "react";
 
-const MainScreen = () => {
-    const {averageTemperature, windSpeed, humidity, setLocation} = useWeatherData();
+const MainScreen: React.FC = () => {
+    const {averageTemperature} = useWeatherData();
+    const {humidity, windSpeed, setLocation } = weatherStore;
+
+    console.log("TEMP: " + averageTemperature + " HUM: " + humidity + " SPE: " + windSpeed);
 
     return (
         <View style={styles.container}>
@@ -38,4 +44,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default MainScreen;
+export default observer(MainScreen);

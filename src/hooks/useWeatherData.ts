@@ -1,7 +1,7 @@
 import {CityName} from "../data/cities";
 import {useEffect, useState} from "react";
 import {WeatherApiResponse} from "../types/WeatherData";
-import {fetchWeather} from "../utils/fetchWeather";
+import {fetchWeatherData} from "../utils/fetchWeatherData";
 
 const useWeatherData = () => {
 
@@ -11,7 +11,7 @@ const useWeatherData = () => {
     useEffect(() => {
 
         const fetchWeatherCall = async () => {
-            const data = await fetchWeather(location)
+            const data = await fetchWeatherData(location)
             data ? setWeatherData(data) : console.log("Request failed for unknown reason")
         }
 

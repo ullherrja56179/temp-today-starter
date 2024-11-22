@@ -2,7 +2,7 @@ import {cityCoordinates, CityName} from "../data/cities";
 import axios from "axios";
 import {WeatherApiResponse} from "../types/WeatherData";
 
-export const fetchWeather = async (city: CityName) => {
+export const fetchWeatherData = async (city: CityName) => {
     const {latitude, longitude} = cityCoordinates[city]
     const requestConfig = {
         params: {
@@ -24,6 +24,6 @@ export const fetchWeather = async (city: CityName) => {
     if (response.status === 200) {
         return response.data
     } else {
-        return undefined
+        return null
     }
 }
