@@ -1,7 +1,7 @@
 import {cityCoordinates, CityName} from "../data/cities";
 import React, {useState} from "react";
 import {Picker} from "@react-native-picker/picker";
-import {Alert, Platform, View} from "react-native";
+import {View} from "react-native";
 import StyledButton from "./StyledButton";
 
 type LocationSelectorProps = {

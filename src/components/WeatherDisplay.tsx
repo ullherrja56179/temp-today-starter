@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import {formatMeasurement} from "../utils/utils"
+import React from "react";
 
 type WeatherDisplayProps = {
     temperature: number,
